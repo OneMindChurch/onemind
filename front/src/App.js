@@ -17,6 +17,7 @@ function App() {
         >
           Learn React
           해우잉
+          해우잉
         </a>
       </header>
     </div>
