@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          시공의 폭풍은 정말 놀라워~!
         </a>
       </header>
     </div>
