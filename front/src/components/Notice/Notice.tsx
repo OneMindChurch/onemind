@@ -78,9 +78,9 @@ const NoticeComponent = (props: any) => {
   useEffect(() => {
     setToken(window.sessionStorage.getItem("token"));
     const fetchPosts = async () => {
-      let res = await axios.get("http://localhost:8080/post/takepost");
+      let res = await axios.get("https://www.hanmaumchurch.net/api/post/takepost");
       setPosts(res.data);
-      console.log(res.data);
+      // console.log(res.data);
       setFile(res.data.File);
     };
     fetchPosts();
@@ -93,12 +93,12 @@ const NoticeComponent = (props: any) => {
   const download = (e: any, name: string, id: any) => {
     e.preventDefault();
     axios({
-      url: "http://localhost:8080/post/download",
+      url: "https://www.hanmaumchurch.net/api/post/download",
       method: "get",
       params: { id: id },
       responseType: "blob",
     }).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       fileDownload(res.data, name);
     });
   };

@@ -118,9 +118,12 @@ export default function Album() {
     setToken(window.sessionStorage.getItem("token"));
     const fetchPostimg = async () => {
       const params = { index: "2022" };
-      let res = await axios.get("http://localhost:8080/member/takemember", {
-        params,
-      });
+      let res = await axios.get(
+        "https://www.hanmaumchurch.net/api/member/takemember",
+        {
+          params,
+        }
+      );
 
       setImgList(res.data.reverse());
     };
@@ -130,14 +133,18 @@ export default function Album() {
   const handleRegistImg = () => {
     const formData = new FormData();
     formData.append("files", upload_file.current.files[0]);
-    console.log(upload_file.current.files[0].name)
-    axios.post("http://localhost:8080/member/uploaddata", formData, {
+    console.log(upload_file.current.files[0].name);
+    axios.post("https://www.hanmaumchurch.net/api/member/uploaddata", formData, {
       headers: {
         Authorization: `Bearer ${window.sessionStorage.getItem("token")}`,
       },
+    }).then((res)=>{
+      console.log(res);
     });
 
-    window.location.reload();
+    setTimeout(()=>{
+      window.location.reload();
+    },1000)
   };
   const handleChange = () => {
     if (isImage(upload_file.current.files[0])) {
@@ -149,13 +156,15 @@ export default function Album() {
     const params = {
       index: index,
     };
-    axios.delete(`http://localhost:8080/member/delete/`, {
+    axios.delete(`https://www.hanmaumchurch.net/api/member/delete/`, {
       headers: {
         Authorization: `Bearer ${window.sessionStorage.getItem("token")}`,
       },
       params,
     });
-    window.location.reload();
+    setTimeout(()=>{
+      window.location.reload();
+    },1000)
   };
   function isImage(file: any) {
     return file.type.indexOf("image") >= 0;
