@@ -134,17 +134,20 @@ export default function Album() {
     const formData = new FormData();
     formData.append("files", upload_file.current.files[0]);
     console.log(upload_file.current.files[0].name);
-    axios.post("https://www.hanmaumchurch.net/api/member/uploaddata", formData, {
-      headers: {
-        Authorization: `Bearer ${window.sessionStorage.getItem("token")}`,
-      },
-    }).then((res)=>{
-      console.log(res);
-    });
 
-    setTimeout(()=>{
+    axios
+      .post("https://www.hanmaumchurch.net/api/member/uploaddata", formData, {
+        headers: {
+          Authorization: `Bearer ${window.sessionStorage.getItem("token")}`,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      });
+
+    setTimeout(() => {
       window.location.reload();
-    },1000)
+    }, 1000);
   };
   const handleChange = () => {
     if (isImage(upload_file.current.files[0])) {
@@ -162,9 +165,9 @@ export default function Album() {
       },
       params,
     });
-    setTimeout(()=>{
+    setTimeout(() => {
       window.location.reload();
-    },1000)
+    }, 1000);
   };
   function isImage(file: any) {
     return file.type.indexOf("image") >= 0;
@@ -211,7 +214,7 @@ export default function Album() {
           ) : (
             <></>
           )}
-          <YearText>2022</YearText>
+          <YearText>2023</YearText>
           {imgList.map((mon, index) => {
             return mon.length ? (
               <div key={index}>
