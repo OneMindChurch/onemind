@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { MenuItems } from "./MenuItems";
 import { BsList, BsXLg } from "react-icons/bs";
 const MainMenu = styled.ul`
-  width: 700px;
+  width: 750px;
   display: flex;
   margin: 0 auto;
   justify-content: center;
