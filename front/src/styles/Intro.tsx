@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { theme } from "./Theme";
-import GreetingBook from "../img/GreetingBook.png";
 
 const Flex = styled.div`
   display: flex;
@@ -87,15 +86,7 @@ export const InfoDiv = styled.div`
     gap: 20px;
   }
 `;
-export const GreetingDiv = styled.div`
-  width: 100%;
-  height: 950px;
-  position: relative;
 
-  @media ${(props) => props.theme.mobile} {
-    height: 600px;
-  }
-`;
 export const GreetingInfoDiv = styled.div`
   width: 100%;
   height: 100%;
@@ -216,7 +207,7 @@ export const GreetingP1 = styled.div<{ fontsize: any }>`
     font-size: 1.8vw;
   }
   @media ${(props) => props.theme.mobile} {
-    font-size: 2.8vw;
+    font-size: 2.5vw;
   }
 `;
 export const GreetingP2 = styled.div<{ fontsize: any }>`
@@ -227,29 +218,10 @@ export const GreetingP2 = styled.div<{ fontsize: any }>`
     font-size: 1.3vw;
   }
   @media ${(props) => props.theme.mobile} {
-    font-size: 2.3vw;
+    font-size: 2.1vw;
   }
 `;
-export const GreetingBox1 = styled.div`
-  position: absolute;
-  text-align: center;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-`;
-export const GreetingImage = styled.img`
-  width: 90%;
-  height: 100%;
-`;
-export const GreetingBox2 = styled.div`
-  height: 100%;
-  position: absolute;
-  padding: 100px 100px;
-  z-index: 2;
-  @media ${(props) => props.theme.mobile} {
-    padding: 30px 60px;
-  }
-`;
+
 export const IntroNum = styled.div`
   top: 12px;
   left: 15px;

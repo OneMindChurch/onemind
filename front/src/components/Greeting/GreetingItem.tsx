@@ -1,16 +1,71 @@
 import React from "react";
-import {
-  FloatImg,
-  GreetingP1,
-  GreetingP2,
-  GreetingBox1,
-  GreetingBox2,
-  GreetingDiv,
-  GreetingImage,
-} from "../../styles/Intro";
+import styled from "styled-components";
+import { theme } from "../../styles/Theme";
 import pastor from "../../img/pastor.jpg";
 import GreetingBook from "../../img/GreetingBook.png";
 
+export const GreetingDiv = styled.div`
+  width: 100%;
+  height: 950px;
+  position: relative;
+
+  @media ${(props) => props.theme.mobile} {
+    height: 600px;
+  }
+`;
+export const GreetingBox1 = styled.div`
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+`;
+export const GreetingBox2 = styled.div`
+  height: 100%;
+  position: absolute;
+  padding: 100px 100px;
+  z-index: 2;
+  @media ${(props) => props.theme.mobile} {
+    padding: 30px 60px;
+  }
+`;
+export const GreetingImage = styled.img`
+  width: 90%;
+  height: 100%;
+`;
+export const FloatImg = styled.img<{ float: any }>`
+  width: 30%;
+  float: ${(props) => props.float};
+  margin-left: 20px;
+
+  @media ${(props) => props.theme.mobile} {
+    display: none;
+  }
+`;
+export const GreetingP1 = styled.div<{ fontsize: any }>`
+  color: ${theme.mainColor};
+  font-size: ${(props) => props.fontsize};
+  font-weight: bold;
+  width: 100%;
+
+  @media ${(props) => props.theme.desktop} {
+    font-size: 1.8vw;
+  }
+  @media ${(props) => props.theme.mobile} {
+    font-size: 2.5vw;
+  }
+`;
+export const GreetingP2 = styled.div<{ fontsize: any }>`
+  width: 100%;
+  font-size: ${(props) => props.fontsize};
+
+  @media ${(props) => props.theme.desktop} {
+    font-size: 1.3vw;
+  }
+  @media ${(props) => props.theme.mobile} {
+    font-size: 2.1vw;
+  }
+`;
 export default function GreetingItem() {
   return (
     <>
