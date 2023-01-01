@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { theme } from "./Theme";
-import GreetingBook from "../img/GreetingBook.png";
 
 const Flex = styled.div`
   display: flex;
@@ -25,21 +24,12 @@ export const Img = styled.img<{ width: any; height: any; margin: any }>`
   object-fit: cover;
 `;
 export const FloatImg = styled.img<{ float: any }>`
-  width: 40%;
-  height: 50%;
+  width: 30%;
   float: ${(props) => props.float};
-  border-radius: 3px;
-  margin: 20px 0 5px 20px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.22);
+  margin-left: 20px;
 
-  @media ${(props) => props.theme.desktop} {
-    width: 30%;
-    height: 40%;
-  }
   @media ${(props) => props.theme.mobile} {
-    width: 150px;
-    height: 210px;
-    margin: auto;
+    display: none;
   }
 `;
 export const DivideBox = styled(Flex)`
@@ -58,7 +48,7 @@ export const SidebarBox = styled(Flex)`
   flex: 2;
   padding: 16px 0 30px 30px;
 
-  @media ${(props) => props.theme.desktop} {
+  @media ${(props) => props.theme.mobile} {
     display: none;
   }
 `;
@@ -82,18 +72,21 @@ export const ContentsBox = styled(Flex)`
 `;
 export const ContentsDiv = styled.div`
   width: 100%;
-  @media ${(props) => props.theme.desktop} {
-    width: 90%;
-  }
-  @media ${(props) => props.theme.mobile} {
-    width: 100%;
-  }
+  max-height: 1000px;
 `;
 export const InfoDiv = styled.div`
   width: 100%;
   height: 100%;
   text-align: left;
+  position: relative;
 
+`;
+
+export const GreetingInfoDiv = styled.div`
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  position: relative;
 `;
 export const TinyTitle = styled.p<{ fontsize: any }>`
   font-size: ${(props) => props.fontsize};
@@ -116,7 +109,7 @@ export const IntroP1 = styled.div`
   margin: 0 0 50px 30px;
 
   @media ${(props) => props.theme.desktop} {
-    font-size: 1.5vw;
+    font-size: 1.4vw;
   }
   @media ${(props) => props.theme.mobile} {
     font-size: 0.5vh;
@@ -179,11 +172,10 @@ export const IntroFirstTitle = styled.div<{ fontsize: any }>`
   border-radius: 5px;
 
   @media ${(props) => props.theme.desktop} {
-    margin: 50px 0 35px 120px;
-    font-size: 40px;
+    margin: 30px 0 10px 120px;
   }
   @media ${(props) => props.theme.mobile} {
-    margin: 45px 0 0 0;
+    margin: 45px 0 0 5px;
     font-size: 40px;
   }
 `;
@@ -206,9 +198,11 @@ export const GreetingP1 = styled.div<{ fontsize: any }>`
   font-weight: bold;
   width: 100%;
 
+  @media ${(props) => props.theme.desktop} {
+    font-size: 1.8vw;
+  }
   @media ${(props) => props.theme.mobile} {
-    width: 80%;
-    margin-top: 10px;
+    font-size: 2.5vw;
   }
 `;
 export const GreetingP2 = styled.div<{ fontsize: any }>`
@@ -216,27 +210,13 @@ export const GreetingP2 = styled.div<{ fontsize: any }>`
   font-size: ${(props) => props.fontsize};
 
   @media ${(props) => props.theme.desktop} {
-    width: 80%;
+    font-size: 1.3vw;
   }
   @media ${(props) => props.theme.mobile} {
-    width: 100%;
+    font-size: 2.1vw;
   }
 `;
-export const GreetingBox = styled.div`
-  top: 0;
-  left: 0;
-  padding: 90px 120px 90px 130px;
-  background-image: url(${GreetingBook});
-  background-repeat: no-repeat;
-  background-size: 91% 100%;
-  background-position: center;
 
-  @media ${(props) => props.theme.mobile} {
-    display: flex;
-    flex-flow: column wrap;
-    padding: 80px 85px 110px 85px;
-  }
-`;
 export const IntroNum = styled.div`
   top: 12px;
   left: 15px;
