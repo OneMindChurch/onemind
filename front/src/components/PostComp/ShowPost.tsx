@@ -22,7 +22,7 @@ import styled from "styled-components";
 import fileDownload from "js-file-download";
 
 const ContentTag = styled.div`
-  max-width: 80vw;
+  max-width: 100vw;
   img {
     max-width: 50%;
   }
