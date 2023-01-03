@@ -1,7 +1,47 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { H2, Lihover, SidebarBox, Ul } from "../../styles/Intro";
+import styled from "styled-components";
+import { theme } from "../../styles/Theme";
+import { Ul } from "../../styles/Intro";
 import NotFound from "../Layout/NotFound";
+
+export const SidebarBox = styled.div`
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50px;
+  height: 890px;
+  flex-flow: column wrap;
+  gap: 30px;
+  flex: 2;
+  padding: 16px 0 30px 30px;
+
+  @media ${(props) => props.theme.mobile} {
+    display: none;
+  }
+`;
+export const H2 = styled.h2`
+  height: 45px;
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+`;
+export const Lihover = styled.li`
+  width: 100%;
+  height: 32px;
+  list-style: none;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid ${theme.mainColor};
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px 0 6px 0;
+  &:hover {
+    font-size: 18px;
+    background-color: ${theme.mainColor};
+    color: ${theme.subColor};
+  }
+`;
 
 interface prop {
   title: string;

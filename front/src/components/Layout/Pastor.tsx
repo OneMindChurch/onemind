@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos"; // AOS import
 import "aos/dist/aos.css";
+import styled from "styled-components";
 import {
   Wrap,
   ImgBox,
@@ -11,12 +12,21 @@ import {
   InfoTitleDiv,
   Img,
   TinyTitle,
-  PastorDiv,
   TinyTitles,
 } from "../../styles/Intro";
 import Sidebar from "../Sidebar/Sidebar";
 import Rainbow250 from "../../img/rainbowVer250.png";
 import PasterItem from "../Pastor/PasterItem";
+
+export const PastorDiv = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  align-items: start;
+  flex-flow: row wrap;
+  margin-bottom: 50px;
+  gap: 20px;
+`;
 
 export default function Pastor() {
   useEffect(() => {
@@ -57,7 +67,6 @@ export default function Pastor() {
                 </div>
                 <div>
                   <TinyTitle fontsize="22px">사역 목사</TinyTitle>
-
                   <PasterItem name="임인환" phone="010-8565-0681" />
                 </div>
               </PastorDiv>
@@ -69,12 +78,10 @@ export default function Pastor() {
               <PastorDiv>
                 <div>
                   <TinyTitle fontsize="22px">전도사</TinyTitle>
-
                   <PasterItem name="정옥숙" phone="010-5556-7651" />
                 </div>
                 <div>
                   <TinyTitle fontsize="22px">영아부</TinyTitle>
-
                   <PasterItem name="손상희" phone="010-2629-1757" />
                 </div>
               </PastorDiv>
