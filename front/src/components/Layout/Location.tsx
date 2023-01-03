@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import AOS from "aos"; // AOS import
 import "aos/dist/aos.css"; // AOS import
+import styled from "styled-components";
+import { theme } from "../../styles/Theme";
 import LocationMap from "../Maps/LocationMap";
+
 import {
   Wrap,
   ImgBox,
@@ -9,7 +12,6 @@ import {
   ContentsBox,
   ContentsDiv,
   InfoDiv,
-  MapBox,
   Ul,
   InfoTitleDiv,
   Li,
@@ -17,6 +19,12 @@ import {
 } from "../../styles/Intro";
 import Sidebar from "../Sidebar/Sidebar";
 import Warm250 from "../../img/warmVer250.png";
+
+export const MapBox = styled.div`
+  width: 100%;
+  height: 500px;
+  border: 1px solid ${theme.mainColor};
+`;
 
 export default function Location() {
   useEffect(() => {

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos"; // AOS import
 import "aos/dist/aos.css";
+import styled from "styled-components";
+import { theme } from "../../styles/Theme";
 import {
   Wrap,
   ImgBox,
@@ -11,11 +13,35 @@ import {
   InfoTitleDiv,
   Img,
   P,
-  ContributionInnerItem,
-  ContributionItem,
 } from "../../styles/Intro";
 import Sidebar from "../Sidebar/Sidebar";
 import Rainbow250 from "../../img/rainbowVer250.png";
+
+export const ContributionItem = styled.div`
+  display: flex;
+  border-left: 2px solid ${theme.mainColor};
+  border-right: 2px solid ${theme.mainColor};
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  margin: 20px 0 0 0;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+
+  @media ${(props) => props.theme.mobile} {
+    flex-flow: column wrap;
+    gap: 50px;
+  }
+`;
+export const ContributionInnerItem = styled.div`
+  display: flex;
+  width: 45%;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+`;
 
 interface contribution {
   title: string;

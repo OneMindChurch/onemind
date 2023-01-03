@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos"; // AOS import
 import "aos/dist/aos.css";
+import styled from "styled-components";
+import { theme } from "../../styles/Theme";
 import {
   Wrap,
   ImgBox,
@@ -10,12 +12,35 @@ import {
   InfoDiv,
   InfoTitleDiv,
   Img,
-  WorshipItem,
-  WorshipInnerItem,
   P,
 } from "../../styles/Intro";
 import Sidebar from "../Sidebar/Sidebar";
 import Rainbow250 from "../../img/rainbowVer250.png";
+
+export const WorshipItem = styled.div`
+  display: flex;
+  border-left: 2px solid ${theme.mainColor};
+  border-right: 2px solid ${theme.mainColor};
+  border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  margin: 20px 0 0 0;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+`;
+export const WorshipInnerItem = styled.div`
+  display: flex;
+  width: 33%;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  @media ${(props) => props.theme.mobile} {
+    width: 50%;
+  }
+`;
 
 interface worship {
   title: string;
