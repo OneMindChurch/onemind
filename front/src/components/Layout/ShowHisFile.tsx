@@ -39,7 +39,7 @@ const DeleteTag = styled.button`
   cursor: pointer;
 `;
 
-export default function ShowSermon() {
+export default function ShowHisFile() {
   const { id } = useParams();
   const content: any = useRef();
   const [token, setToken] = useState("");
@@ -47,7 +47,7 @@ export default function ShowSermon() {
   useEffect(() => {
     AOS.init();
     axios({
-      url: "https://www.hanmaumchurch.net/api/you-tube/tag",
+      url: "https://www.hanmaumchurch.net/api/hisfile/tag",
       method: "get",
       params: { id: id },
       withCredentials: true,
@@ -61,13 +61,13 @@ export default function ShowSermon() {
     const params = {
       id: id,
     };
-    axios.delete(`https://www.hanmaumchurch.net/api/you-tube/delete`, {
+    axios.delete(`https://www.hanmaumchurch.net/api/hisfile/delete`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
       params,
     });
-    navigate("/sermon");
+    navigate("/hisfile");
   };
   return (
     <Wrap>
@@ -82,9 +82,9 @@ export default function ShowSermon() {
         />
       </ImgBox>
       <DivideBox>
-        <Sidebar title="설교 말씀" />
+        <Sidebar title="추억" />
         <ContentsBox>
-          <InfoTitleDiv fontsize="20px">설교 말씀</InfoTitleDiv>
+          <InfoTitleDiv fontsize="20px">추억</InfoTitleDiv>
           <ContentsDiv data-aos="fade-left" data-aos-duration="800">
             <InfoDiv>
               {token ? (

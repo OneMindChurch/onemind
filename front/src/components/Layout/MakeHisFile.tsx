@@ -42,7 +42,7 @@ const ButtonTag = styled.button`
   background-color: white;
   margin-top: 10px;
 `;
-export default function MakeSermon() {
+export default function MakeHisFile() {
   const [link, SetLink] = useState("");
 
   const title = useRef(null);
@@ -53,7 +53,7 @@ export default function MakeSermon() {
       tag: link,
     };
     const result = await axios({
-      url: "https://www.hanmaumchurch.net/api/you-tube/upload",
+      url: "https://www.hanmaumchurch.net/api/hisfile/upload",
       headers: {
         Authorization: `Bearer ${window.sessionStorage.getItem("token")}`,
       },
@@ -61,7 +61,7 @@ export default function MakeSermon() {
       data: data,
       withCredentials: true,
     });
-    navigate("/sermon");
+    navigate("/hisfile");
   };
   useEffect(() => {
     AOS.init();
@@ -79,9 +79,9 @@ export default function MakeSermon() {
         />
       </ImgBox>
       <DivideBox>
-        <Sidebar title="설교 말씀" />
+        <Sidebar title="추억" />
         <ContentsBox>
-          <InfoTitleDiv fontsize="20px">설교 말씀</InfoTitleDiv>
+          <InfoTitleDiv fontsize="20px">추억</InfoTitleDiv>
           <ContentsDiv data-aos="fade-left" data-aos-duration="800">
             <InfoDiv>
               <TextTag>제목</TextTag>
