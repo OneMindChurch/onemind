@@ -10,7 +10,7 @@ export const SidebarBox = styled.div`
   position: -webkit-sticky;
   position: sticky;
   top: 50px;
-  height: 890px;
+  height: 970px;
   flex-flow: column wrap;
   gap: 30px;
   flex: 2;
@@ -62,6 +62,7 @@ function Sidebar(prop: prop) {
     { name: "교회 소개", path: "/introduction", id: "introduction" },
     { name: "목사 소개", path: "/pastor", id: "pastor" },
     { name: "설교 말씀", path: "/sermon", id: "sermon" },
+    { name: "설교 말씀 카피", path: "/sermoncopy", id: "sermonCopy" },
     { name: "교회 소식", path: "/news", id: "news" },
     { name: "교회 앨범", path: "/album", id: "album" },
     { name: "교회 연혁", path: "/history", id: "history" },
@@ -82,6 +83,7 @@ function Sidebar(prop: prop) {
         "/introduction" ||
         "/pastor" ||
         "/sermon" ||
+        "/sermoncopy" ||
         "/news" ||
         "/album" ||
         "/location" ||

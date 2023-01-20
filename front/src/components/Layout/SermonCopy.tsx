@@ -15,7 +15,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import Rainbow250 from "../../img/rainbowVer250.png";
 import YouTube from "./Youtube";
 
-export default function Sermon() {
+export default function SermonCopy() {
   useEffect(() => {
     AOS.init();
   });
@@ -32,9 +32,9 @@ export default function Sermon() {
         />
       </ImgBox>
       <DivideBox>
-        <Sidebar title="설교 말씀" />
+        <Sidebar title="설교 말씀 카피" />
         <ContentsBox>
-          <InfoTitleDiv fontsize="20px">설교 말씀</InfoTitleDiv>
+          <InfoTitleDiv fontsize="20px">설교 말씀 카피</InfoTitleDiv>
           <ContentsDiv data-aos="fade-up" data-aos-duration="800">
             <InfoDiv>
               <YouTube />

@@ -23,6 +23,7 @@ import ShowSermon from "./components/Layout/ShowSermon";
 import PostUpdataDefault from "./components/Layout/PostUpdataDefault";
 import Contribution from "./components/Layout/Contribution";
 import History from "./components/Layout/History";
+import SermonCopy from "./components/Layout/SermonCopy";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/introduction" element={<Introduction />} />
         <Route path="/pastor" element={<Pastor />} />
         <Route path="/sermon" element={<Sermon />} />
+        <Route path="/sermoncopy" element={<SermonCopy />} />
         <Route path="/news" element={<News />} />
         <Route path="/album" element={<Album />} />
         <Route path="/location" element={<Location />} />
