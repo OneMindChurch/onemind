@@ -13,6 +13,7 @@ import { MemberService } from './member/service/member.service';
 import { MemberController } from './member/controller/member.controller';
 import { MemberModule } from './member/member.module';
 import { YouTubeModule } from './you-tube/you-tube.module';
+import { HisfileModule } from './hisfile/hisfile.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { YouTubeModule } from './you-tube/you-tube.module';
     PostModule,
     MemberModule,
     YouTubeModule,
+    HisfileModule,
   ],
   controllers: [AppController, ControllerController, MemberController],
   providers: [AppService, ServiceService, prismaService, MemberService],

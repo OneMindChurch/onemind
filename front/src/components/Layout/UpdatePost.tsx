@@ -66,7 +66,7 @@ export default function UpdatePost() {
         headers: {
           Authorization: `Bearer ${window.sessionStorage.getItem("token")}`,
         },
-        url: "http://localhost:8080/post/img",
+        url: "https://www.hanmaumchurch.net/api/post/img",
         method: "post",
         data: formData,
         withCredentials: true,
@@ -143,7 +143,7 @@ export default function UpdatePost() {
     };
 
     const result = await axios({
-      url: "http://localhost:8080/post/update",
+      url: "https://www.hanmaumchurch.net/api/post/update",
       method: "post",
       headers: {
         Authorization: `Bearer ${window.sessionStorage.getItem("token")}`,
@@ -155,7 +155,7 @@ export default function UpdatePost() {
   };
   useEffect(() => {
     axios({
-      url: "http://localhost:8080/post/takecontent",
+      url: "https://www.hanmaumchurch.net/api/post/takecontent",
       method: "get",
       params: { id: id },
       withCredentials: true,

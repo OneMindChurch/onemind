@@ -22,7 +22,7 @@ import styled from "styled-components";
 import fileDownload from "js-file-download";
 
 const ContentTag = styled.div`
-  max-width: 80vw;
+  max-width: 100vw;
   img {
     max-width: 50%;
   }
@@ -83,7 +83,7 @@ export default function ShowPost() {
   useEffect(() => {
     AOS.init();
     axios({
-      url: "http://localhost:8080/post/takecontent",
+      url: "https://www.hanmaumchurch.net/api/post/takecontent",
       method: "get",
       params: { id: id },
       withCredentials: true,
@@ -100,7 +100,7 @@ export default function ShowPost() {
     const params = {
       id: id,
     };
-    axios.delete(`http://localhost:8080/post/delete`, {
+    axios.delete(`https://www.hanmaumchurch.net/api/post/delete`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -114,7 +114,7 @@ export default function ShowPost() {
   const download = (e: any, name: string, id: any) => {
     e.preventDefault();
     axios({
-      url: "http://localhost:8080/post/download",
+      url: "https://www.hanmaumchurch.net/api/post/download",
       method: "get",
       params: { id: id },
       responseType: "blob",

@@ -71,7 +71,8 @@ const YouTube = (props: any) => {
   const [token, setToken] = useState("");
   useEffect(() => {
     const fetchPosts = async () => {
-      let res = await axios.get("http://localhost:8080/you-tube/list");
+      let res = await axios.get("https://www.hanmaumchurch.net/api/you-tube/list",
+      { withCredentials: true });
       setPosts(res.data);
     };
     fetchPosts();

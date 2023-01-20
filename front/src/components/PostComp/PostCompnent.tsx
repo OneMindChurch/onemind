@@ -62,7 +62,7 @@ export default function PostComponent() {
       formData.append("files", file); // formData는 키-밸류 구조
       // 백엔드 multer라우터에 이미지를 보낸다.
       axios({
-        url: "http://localhost:8080/post/img",
+        url: "https://www.hanmaumchurch.net/api/post/img",
         headers: {
           Authorization: `Bearer ${window.sessionStorage.getItem("token")}`,
         },
@@ -143,7 +143,7 @@ export default function PostComponent() {
       content: quillRef.current.value,
     };
     const result = await axios({
-      url: "http://localhost:8080/post/upload",
+      url: "https://www.hanmaumchurch.net/api/post/upload",
       headers: {
         Authorization: `Bearer ${window.sessionStorage.getItem("token")}`,
       },
@@ -151,18 +151,21 @@ export default function PostComponent() {
       data: data,
       withCredentials: true,
     });
-    console.log(result);
-    formData.append("authorId", result.data.id);
-    formData.append("originalName", upload_file.current.files[0].name);
-    const Fileresult = await axios({
-      url: "http://localhost:8080/post/attachfile",
-      headers: {
-        Authorization: `Bearer ${window.sessionStorage.getItem("token")}`,
-      },
-      method: "post",
-      data: formData,
-      withCredentials: true,
-    });
+    // console.log(upload_file.current.files);
+    if (upload_file.current.files.length > 0) {
+      formData.append("authorId", result.data.id);
+      formData.append("originalName", upload_file.current.files[0].name);
+      const Fileresult = await axios({
+        url: "https://www.hanmaumchurch.net/api/post/attachfile",
+        headers: {
+          Authorization: `Bearer ${window.sessionStorage.getItem("token")}`,
+        },
+        method: "post",
+        data: formData,
+        withCredentials: true,
+      });
+    }
+
     navigate("/news");
   };
   return (

@@ -71,7 +71,7 @@ export default function Login() {
 
   const handleLogIn = () => {
     axios
-      .post("http://localhost:8080/auth/login", {
+      .post("https://www.hanmaumchurch.net/api/auth/login", {
         email: ID,
         password: PW,
       })

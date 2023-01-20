@@ -82,11 +82,6 @@ export const InfoDiv = styled.div`
   text-align: left;
   position: relative;
 
-  @media ${(props) => props.theme.mobile} {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 20px;
-  }
 `;
 export const InfoTitleDiv = styled(InfoDiv)<{ fontsize: any }>`
   height: 40px;

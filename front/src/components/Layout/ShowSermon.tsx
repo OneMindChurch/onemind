@@ -48,7 +48,7 @@ export default function ShowSermon() {
   useEffect(() => {
     AOS.init();
     axios({
-      url: "http://localhost:8080/you-tube/tag",
+      url: "https://www.hanmaumchurch.net/api/you-tube/tag",
       method: "get",
       params: { id: id },
       withCredentials: true,
@@ -62,7 +62,7 @@ export default function ShowSermon() {
     const params = {
       id: id,
     };
-    axios.delete(`http://localhost:8080/you-tube/delete`, {
+    axios.delete(`https://www.hanmaumchurch.net/api/you-tube/delete`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
