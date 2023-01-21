@@ -23,7 +23,9 @@ import ShowSermon from "./components/Layout/ShowSermon";
 import PostUpdataDefault from "./components/Layout/PostUpdataDefault";
 import Contribution from "./components/Layout/Contribution";
 import History from "./components/Layout/History";
-import SermonCopy from "./components/Layout/SermonCopy";
+import HisFile from "./components/Layout/HisFile";
+import MakeHisFile from "./components/Layout/MakeHisFile";
+import ShowHisFile from "./components/Layout/ShowHisFile";
 
 function App() {
   return (
@@ -36,7 +38,7 @@ function App() {
         <Route path="/introduction" element={<Introduction />} />
         <Route path="/pastor" element={<Pastor />} />
         <Route path="/sermon" element={<Sermon />} />
-        <Route path="/sermoncopy" element={<SermonCopy />} />
+        <Route path="/hisfile" element={<HisFile />} />
         <Route path="/news" element={<News />} />
         <Route path="/album" element={<Album />} />
         <Route path="/location" element={<Location />} />
@@ -49,6 +51,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/makesermon" element={<MakeSermon />} />
         <Route path="/showsermond/:id" element={<ShowSermon />} />
+        <Route path="/makehisfile" element={<MakeHisFile />} />
+        <Route path="/showhisfile/:id" element={<ShowHisFile />} />
         <Route path="/updatepost/:id" element={<PostUpdataDefault />} />
       </Routes>
       <Footer></Footer>
